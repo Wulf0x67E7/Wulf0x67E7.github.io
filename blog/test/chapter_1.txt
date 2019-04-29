@@ -11,7 +11,7 @@ First Chapter\\(test)
 {audio:test/MelacholyOfTheKing.wav}
 #sdf
 #sdf;adfaf
-{:?content=}
+{:embed?content=test}
 <left>asdfasga\[[pipi]fgajsdlkja</left>
 As plain embedd
 {:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}

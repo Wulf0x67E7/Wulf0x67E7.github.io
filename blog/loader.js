@@ -184,11 +184,11 @@ function parseContent(content) {
                                 break;
                             case "audio":
                                 replacement =
-                                    "<audio controls><source src='" + ref + "'>" + ref + "</audio>";
+                                    "<audio id='content.audio' controls><source src='" + ref + "'>" + ref + "</audio>";
                                 break;
                             default:
                                 replacement =
-                                    "<iframe src='" + ref + "'>" + ref + "</iframe>";
+                                    "<iframe id='content.iframe' src='" + ref + "'>" + ref + "</iframe>";
                         }
                     }
                     line = line.replaceBetween(k, l + 1, replacement);

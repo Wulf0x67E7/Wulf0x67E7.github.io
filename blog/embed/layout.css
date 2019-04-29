@@ -32,6 +32,6 @@ p[id^="annotation"]{
     margin-left: 64px;
 }
 img[id^="content"]{
-    max-width: 90%;
+    max-width: 95%;
     margin-top: 8px;
 }
