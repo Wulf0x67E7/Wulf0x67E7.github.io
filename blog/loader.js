@@ -166,11 +166,19 @@ function parseContent(content) {
                     if (m != -1) {
                         var ref = type.substring(m + 1);
                         type = type.substring(0, m);
+                        var n = type.indexOf("!");
+                        var style = "";
+                        if (n != -1) {
+                            style = type.substring(n + 1);
+                            type = type.substring(0, n);
+                        }
                         switch (type) {
                             case "image":
                             case "img":
                                 replacement =
-                                    "<img id=\"content.img\" src=\"" +
+                                    "<img id=\"content.img\" " +
+                                    parseImgStyle(style) +
+                                    "src=\"" +
                                     ref +
                                     "\"></img>";
                                 break;
@@ -196,6 +204,31 @@ function parseContent(content) {
         newhtml += "<p id=\"annotation.p." + (i + 1) + "\"><a href=\"#annotation.a." + (i + 1) + "\">[" + (i + 1) + "]</a> " + annotations[i] + "</p>";
     }
     return newhtml;
+}
+function parseImgStyle(content) {
+    var ret = "style='";
+    content = content.replace(/ /g, "").split(",");
+    for (var i = 0; i < content.length; i++) {
+        var value = "";
+        var j = content[i].indexOf("=");
+        if (j != -1) {
+            value = content[i].substring(j + 1);
+            content[i] = content[i].substring(0, j);
+        }
+        switch (content[i]) {
+            case "width":
+            case "w":
+                ret += "width: " + value + ";";
+                break;
+            case "height":
+            case "h":
+                ret += "height: " + value + ";";
+                break;
+            default:
+        }
+    }
+    ret += "'";
+    return ret;
 }
 function parseStyle(content) {
     switch (content) {
