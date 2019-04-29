@@ -97,16 +97,26 @@ function parseContent(content) {
                         }
                         linkref = linkref.split(":");
                         var replacement = "";
-                        if (linkref.length > 1)
+                        if (linkref.length > 1) {
+                            if (linkref[0] == "") {
+                                linkref[0] = getUrlParam("series", "");
+                                switch (linkref[1]) {
+                                    case "+":
+                                        linkref[1] = parseInt(getUrlParam("chapter", 0), 10) + 1;
+                                        break;
+                                    case "-":
+                                        linkref[1] = parseInt(getUrlParam("chapter", 2), 10) - 1;
+                                }
+                            }
                             replacement =
                                 "<a href=\"?series=" +
-                                linkref[0] +
-                                "&chapter=" +
-                                linkref[1] +
-                                "\">" +
-                                linkname +
-                                "</a>";
-                        else
+                                    linkref[0] +
+                                    "&chapter=" +
+                                    (linkref[1] > 0 ? linkref[1] : 1) +
+                                    "\">" +
+                                    linkname +
+                                    "</a>";
+                        } else
                             replacement =
                                 "<a href=\"?content=" +
                                 linkref[0] +

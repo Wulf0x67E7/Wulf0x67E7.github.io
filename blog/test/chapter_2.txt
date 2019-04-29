@@ -2,7 +2,7 @@ damage
 
 Chapter 1 – Contact
 
-Far from the three major civilizations, in the part of the ocean known as the Great East, there was a continent. At half the size of Australia, it was perhaps too small to really be considered a continent, but it was definitely too big to be just an island.
+(Far){:-} from the three major civilizations, in the part of the ocean known as the Great East, there was a continent. At half the size of Australia, it was perhaps too small to really be considered a continent, but it was definitely too big to be just an island.
 On this continent of Rodenius, there were 3 nations.
 
 Containing fertile land and numerous granaries, the agricultural Principality of Kua Toine.
