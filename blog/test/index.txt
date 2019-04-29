@@ -1,1 +1,6 @@
-testsets
+\[Series Name]
+
+\[Series Description]
+
+(Chapter 1){;1}
+(Chapter 1){;2}

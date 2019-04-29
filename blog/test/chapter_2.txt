@@ -2,7 +2,7 @@ damage
 
 Chapter 1 – Contact
 
-(Far){:-} from the three major civilizations, in the part of the ocean known as the Great East, there was a continent. At half the size of Australia, it was perhaps too small to really be considered a continent, but it was definitely too big to be just an island.
+(Far){;-} from the three major civilizations, in the part of the ocean known as the Great East, there was a continent. At half the size of Australia, it was perhaps too small to really be considered a continent, but it was definitely too big to be just an island.
 On this continent of Rodenius, there were 3 nations.
 
 Containing fertile land and numerous granaries, the agricultural Principality of Kua Toine.
@@ -38,7 +38,7 @@ They were at the same altitude. Intending to pass it by, he closed in.
 He flew past the unidentified object. It was very large. Nothing was flapping, but what appeared to be the wings had 4 objects spinning around loudly. A light shined at the tip of the body and the wings, blinking on and off brightly. The flying object was white, with a red circle drawn on the body and wings.
 
 He turned around, his partner flapping its wings fiercely. The wind pressure pushed hard against him, threatening to throw him off.
-He kept at a distance… or at least, he intended to, but he couldn’t even catch up to it. Wyverns could fly at 235 km/h. Among animals, it could claim almost the top speed, being faster than horses – the cavalry that ruled the skies. (Apparently, the major civilizations were breeding an even faster species of dragon.)
+He kept at a distance… or at least, he intended to, but he couldn’t even catch up to it. Wyverns could fly at 235 km/h. Among animals, it could claim almost the top speed, being faster than horses – the cavalry that ruled the skies. \(Apparently, the major civilizations were breeding an even faster species of dragon.)
 
 But really, he just couldn’t catch up at all. He couldn’t even determine if it was a living thing or not.
 

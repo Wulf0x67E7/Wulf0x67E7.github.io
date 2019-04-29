@@ -7,16 +7,16 @@ First Chapter\\(test)
 <mark>da</mark>[didi]#SECRET;
 
 <b, i>dede</b>[ga]de</i>asdf\<a href="">jhasld</a>fjasdfjhlasjkdfhjashdfui arnvcbfjh.weihaliusdfhiunyx cnvulurlialkasnmdkfjcu vluiinan kailfu adjf asiudfz galrlawiweufbuab bfasdbf asdfliluwebif sd
-{audio:test/AdventureAcrossTheMountain.wav}
-{audio:test/MelacholyOfTheKing.wav}
+{audio;test/AdventureAcrossTheMountain.wav}
+{audio;test/MelacholyOfTheKing.wav}
 #sdf
 #sdf;adfaf
-{:embed?content=test}
+{;embed}
 <left>asdfasga\[[pipi]fgajsdlkja</left>
 As plain embedd
-{:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
+{;https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
 As image
-{img!w=60%,h=50px:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
+{img!w=60%,h=50px;https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
 a
 a
 a
@@ -81,4 +81,4 @@ a
 a
 a
 a
-(Next Chapter){test:2}Add link to same story (next){:+} (prev){:-} ":+" ":-"
+(Next Chapter){test;2}Add link to same story (next){;+} (prev){;-}

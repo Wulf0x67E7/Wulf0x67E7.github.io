@@ -1,5 +1,5 @@
 function loadDynamicPage() {
-    var series = getUrlParam("series", ""), chapter = getUrlParam("chapter", ""), content = getUrlParam("content", "content.txt");
+    var series = getUrlParam("series", ""), chapter = getUrlParam("chapter", ""), content = getUrlParam("content", "index.txt");
     if (series != "") {
         var prev = document.getElementById("chapter.prev");
         var next = document.getElementById("chapter.next");
@@ -94,35 +94,52 @@ function parseContent(content) {
                                 linkref = line.substring(l + 2, nl);
                                 l = nl;
                             }
-                        }
-                        linkref = linkref.split(":");
-                        var replacement = "";
-                        if (linkref.length > 1) {
-                            if (linkref[0] == "") {
-                                linkref[0] = getUrlParam("series", "");
-                                switch (linkref[1]) {
-                                    case "+":
-                                        linkref[1] = parseInt(getUrlParam("chapter", 0), 10) + 1;
-                                        break;
-                                    case "-":
-                                        linkref[1] = parseInt(getUrlParam("chapter", 2), 10) - 1;
+                            linkref = linkref.split(";");
+                            var replacement = "";
+                            if (linkref.length > 1) {
+                                if (linkref[0] == "") {
+                                    linkref[0] = getUrlParam("series", "");
+                                    switch (linkref[1]) {
+                                        case "+":
+                                            linkref[1] = parseInt(getUrlParam("chapter", 0), 10) + 1;
+                                            break;
+                                        case "-":
+                                            linkref[1] = parseInt(getUrlParam("chapter", 2), 10) - 1;
+                                    }
                                 }
-                            }
+                                if (linkref[1] != "") {
+                                    replacement =
+                                        "<a href=\"?series=" +
+                                        linkref[0] +
+                                        "&chapter=" +
+                                        (linkref[1] > 0 ? linkref[1] : 1) +
+                                        "\">" +
+                                        linkname +
+                                        "</a>";
+                                } else {
+                                    replacement =
+                                        "<a href=\"?series=" +
+                                        linkref[0] +
+                                        "\">" +
+                                        linkname +
+                                        "</a>";
+                                }
+                            } else
+                                replacement =
+                                    "<a href=\"?content=" +
+                                    linkref[0] +
+                                    "\">" +
+                                    linkname +
+                                    "</a>";
+                        }else{
                             replacement =
-                                "<a href=\"?series=" +
-                                linkref[0] +
-                                "&chapter=" +
-                                (linkref[1] > 0 ? linkref[1] : 1) +
-                                "\">" +
+                                "<a href='" +
+                                linkname +
+                                "'>" +
                                 linkname +
                                 "</a>";
-                        } else
-                            replacement =
-                                "<a href=\"?content=" +
-                                linkref[0] +
-                                "\">" +
-                                linkname +
-                                "</a>";
+                        }
+                        
                         line = line.replaceBetween(k, l + 1, replacement);
                         k += replacement.length - 1;
                     }
@@ -162,7 +179,7 @@ function parseContent(content) {
                 if (l != -1) {
                     var replacement = "";
                     var type = line.substring(k + 1, l);
-                    var m = type.indexOf(":");
+                    var m = type.indexOf(";");
                     if (m != -1) {
                         var ref = type.substring(m + 1);
                         type = type.substring(0, m);

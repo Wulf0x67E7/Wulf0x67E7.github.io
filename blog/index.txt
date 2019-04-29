@@ -1,0 +1,23 @@
+Transblog
+
+Simple story hosting
+
+This site is in development and not to be actually used yet. Simply testing it should be ok though.
+To use your own stories:
+
+https://wulf0x67e7.github.io/blog/?content=URL_TO_CONTENT
+
+File structure:
+-URL_TO_SERIES
+--index.txt \(Opened if no chapter)
+--chapter_X.txt \(opened if chapter nr set to X)
+--SUBSERIES \(Yep, they can be nested)
+---index.txt 
+--- ...
+https://wulf0x67e7.github.io/blog/?series=URL_TO_SERIES
+https://wulf0x67e7.github.io/blog/?series=URL_TO_SERIES&chapter=CHAPTER_NR
+
+(Test-Series:){test;}
+    (chapter 1){test;1}
+    (chapter 2){test;2}
+(http://www.google.com) Cannot disguise external / non blog links
