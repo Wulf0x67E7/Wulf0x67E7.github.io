@@ -110,12 +110,12 @@ function parseContent(content) {
                             }
                             replacement =
                                 "<a href=\"?series=" +
-                                    linkref[0] +
-                                    "&chapter=" +
-                                    (linkref[1] > 0 ? linkref[1] : 1) +
-                                    "\">" +
-                                    linkname +
-                                    "</a>";
+                                linkref[0] +
+                                "&chapter=" +
+                                (linkref[1] > 0 ? linkref[1] : 1) +
+                                "\">" +
+                                linkname +
+                                "</a>";
                         } else
                             replacement =
                                 "<a href=\"?content=" +
@@ -255,7 +255,13 @@ function parseStyle(content) {
 }
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    var url = window.location.href;
+    { // Remove location inside site from last param
+        var hashi = url.indexOf("#");
+        if (hashi != -1)
+            url = url.substring(0, hashi);
+    }
+    var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
