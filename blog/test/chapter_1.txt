@@ -1,15 +1,15 @@
 Test Series
 
-First Chapter
+First Chapter\\(test)
 
 <sup>dudidu</sup>(test){test.txt}
 #ABSOLUTE
 <mark>da</mark>[didi]#SECRET;
 
-<b, i>dede</b>[ga]de</i>asdfjhasldfjasdfjhlasjkdfhjashdfui arnvcbfjh.weihaliusdfhiunyx cnvulurlialkasnmdkfjcu vluiinan kailfu adjf asiudfz galrlawiweufbuab bfasdbf asdfliluwebif sd
+<b, i>dede</b>[ga]de</i>asdf\<a href="">jhasld</a>fjasdfjhlasjkdfhjashdfui arnvcbfjh.weihaliusdfhiunyx cnvulurlialkasnmdkfjcu vluiinan kailfu adjf asiudfz galrlawiweufbuab bfasdbf asdfliluwebif sd
 #sdf
 #sdf;adfaf
-<left>asdfasgafgajsdlkja</left>
+<left>asdfasga\[[pipi]fgajsdlkja</left>
 {img:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
 a
 a

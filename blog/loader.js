@@ -74,54 +74,76 @@ function parseContent(content) {
             }
             //proccess links
             for (var k = line.indexOf("("); k != -1; k = line.indexOf("(", k + 1)) {
-                var l = line.indexOf(")", k + 1);
-                if (l != -1) {
-                    var linkname = line.substring(k + 1, l);
-                    var linkref = linkname;
-                    if (line.charAt(l + 1) == "{") {
-                        var nl = line.indexOf("}", l + 1);
-                        if (nl != -1) {
-                            linkref = line.substring(l + 2, nl);
-                            l = nl;
+                var escaped = false;
+                var escapecount = 0;
+                for (var l = k - 1; l >= 0 && line.charAt(l) == "\\"; l--) {
+                    escaped = !escaped;
+                    if (escaped)
+                        escapecount++;
+                }
+                line = line.replaceBetween(k - escapecount, k, "");
+                k -= escapecount;
+                if (!escaped) {
+                    var l = line.indexOf(")", k + 1);
+                    if (l != -1) {
+                        var linkname = line.substring(k + 1, l);
+                        var linkref = linkname;
+                        if (line.charAt(l + 1) == "{") {
+                            var nl = line.indexOf("}", l + 1);
+                            if (nl != -1) {
+                                linkref = line.substring(l + 2, nl);
+                                l = nl;
+                            }
                         }
+                        linkref = linkref.split(":");
+                        var replacement = "";
+                        if (linkref.length > 1)
+                            replacement =
+                                "<a href=\"?series=" +
+                                linkref[0] +
+                                "&chapter=" +
+                                linkref[1] +
+                                "\">" +
+                                linkname +
+                                "</a>";
+                        else
+                            replacement =
+                                "<a href=\"?content=" +
+                                linkref[0] +
+                                "\">" +
+                                linkname +
+                                "</a>";
+                        line = line.replaceBetween(k, l + 1, replacement);
+                        k += replacement.length - 1;
                     }
-                    linkref = linkref.split(":");
-                    var replacement = "";
-                    if (linkref.length > 1)
-                        replacement =
-                            " <a href=\"?series=" +
-                            linkref[0] +
-                            "&chapter=" +
-                            linkref[1] +
-                            "\">" +
-                            linkname +
-                            "</a> ";
-                    else
-                        replacement =
-                            " <a href=\"?content=" +
-                            linkref[0] +
-                            "\">" +
-                            linkname +
-                            "</a> ";
-                    line = line.replaceBetween(k, l + 1, replacement);
-                    k += replacement.length - 1;
                 }
             }
             //process annotations
             for (var k = line.indexOf("["); k != -1; k = line.indexOf("[", k + 1)) {
-                var l = line.indexOf("]", k + 1);
-                if (l != -1) {
-                    annotations[annotations.length] = line.substring(k + 1, l);
-                    var replacement =
-                        "<a id=\"annotation.a." +
-                        annotations.length +
-                        "\" href=\"#annotation.p." +
-                        annotations.length +
-                        "\">[" +
-                        annotations.length +
-                        "]</a>";
-                    line = line.replaceBetween(k, l + 1, replacement);
-                    k += replacement.length - 1;
+                var escaped = false;
+                var escapecount = 0;
+                for (var l = k - 1; l >= 0 && line.charAt(l) == "\\"; l--) {
+                    escaped = !escaped;
+                    if (escaped)
+                        escapecount++;
+                }
+                line = line.replaceBetween(k - escapecount, k, "");
+                k -= escapecount;
+                if (!escaped) {
+                    var l = line.indexOf("]", k + 1);
+                    if (l != -1) {
+                        annotations[annotations.length] = line.substring(k + 1, l);
+                        var replacement =
+                            "<a id=\"annotation.a." +
+                            annotations.length +
+                            "\" href=\"#annotation.p." +
+                            annotations.length +
+                            "\">[" +
+                            annotations.length +
+                            "]</a>";
+                        line = line.replaceBetween(k, l + 1, replacement);
+                        k += replacement.length - 1;
+                    }
                 }
             }
             //process embedding
