@@ -7,9 +7,14 @@ First Chapter\\(test)
 <mark>da</mark>[didi]#SECRET;
 
 <b, i>dede</b>[ga]de</i>asdf\<a href="">jhasld</a>fjasdfjhlasjkdfhjashdfui arnvcbfjh.weihaliusdfhiunyx cnvulurlialkasnmdkfjcu vluiinan kailfu adjf asiudfz galrlawiweufbuab bfasdbf asdfliluwebif sd
+{audio:test/AdventureAcrossTheMountain.wav}
+{audio:test/MelacholyOfTheKing.wav}
 #sdf
 #sdf;adfaf
 <left>asdfasga\[[pipi]fgajsdlkja</left>
+As plain embedd
+{:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
+As image
 {img:https://cdn.novelupdates.com/images/2019/01/Nihonkoku-Shoukan_new.jpg}
 a
 a

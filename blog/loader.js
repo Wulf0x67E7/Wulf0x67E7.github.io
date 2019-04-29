@@ -174,6 +174,13 @@ function parseContent(content) {
                                     ref +
                                     "\"></img>";
                                 break;
+                            case "audio":
+                                replacement =
+                                    "<audio controls><source src='" + ref + "'>" + ref + "</audio>";
+                                break;
+                            default:
+                                replacement =
+                                    "<iframe src='" + ref + "'>" + ref + "</iframe>";
                         }
                     }
                     line = line.replaceBetween(k, l + 1, replacement);
