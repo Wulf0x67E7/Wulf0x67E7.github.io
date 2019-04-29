@@ -17,6 +17,7 @@ File structure:
 https://wulf0x67e7.github.io/blog/?series=URL_TO_SERIES
 https://wulf0x67e7.github.io/blog/?series=URL_TO_SERIES&chapter=CHAPTER_NR
 
+
 (Test-Series:){test;}
     (chapter 1){test;1}
     (chapter 2){test;2}
