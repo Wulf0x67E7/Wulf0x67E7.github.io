@@ -1,0 +1,76 @@
+html{
+    height: 100%;
+    overflow-y: scroll;
+}
+body{
+    margin: 0px;
+    min-height: 100%;
+    font-family: "Verdana";
+}
+div[id^="sidebar"]{
+    background-color: teal;
+    position: fixed;
+    height: 100%;
+    width: 5%;
+}
+div[id^="topbar"]{
+    background-color: teal;
+    position: fixed;
+    left: 5%;
+    top: 0%;
+    height: 5%;
+    width: 95%;
+}
+div[id^="bottombar"]{
+    background-color: teal;
+    position: fixed;
+    left: 5%;
+    bottom: 0%;
+    height: 5%;
+    width: 95%;
+}
+div[id^="content"]{
+    position: absolute;
+    left: 5%;
+    top: 0%;
+    width: 95%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+p[id^="content"]{
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+p[id="content.p.0"]{
+    font-size: 48px;
+}
+p[id="content.p.1"]{
+    font-size: 40px;
+    margin-left: 32px;
+    margin-bottom: 48px;
+}
+span[id^="content"]{
+    margin-left: 16px;
+}
+p[id^="annotation"]{
+    font-size: 32px;
+    margin-left: 64px;
+}
+div[id^="chapter"]{
+    font-size: 200%;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+div[id^="chapter.prev"]{
+    right: 60%;
+}
+div[id^="chapter.next"]{
+    left: 60%;
+}
+img[id^="content"]{
+    max-width: 90%;
+    margin-top: 8px;
+}
